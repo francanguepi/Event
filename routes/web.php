@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'Auth\LoginController@showLoginForm');
+
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 

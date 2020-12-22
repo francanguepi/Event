@@ -1,26 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Gestion d'évènement</title>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/fontawesome-free-5.8.1-web/css/all.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/flaticon.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/linearicons.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/nice-select.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/slicknav.min.css') }}" rel="stylesheet">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    </head>
+    <body>
+            
+        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
+            <div class="container">
+                <a class="navbar-brand" to="#">HOTEL</a>
+                <div id="top-menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="">
+                            <a class="nav-link" to="/laravel/hotel7/public">Accueil</a>
+                        </li>
+                        <li class="">
+                            <a class="nav-link" to="/laravel/hotel7/public/blog">Blog</a>
+                        </li>
+                        <li class="">
+                            <a class="nav-link" to="/laravel/hotel7/public/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -51,7 +71,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->username }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -72,9 +92,21 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <h1 class="pt-5">Evènement</h1>
+        <button type="submit" class="form-control submit rounded-right ">envoyer<i class="fas fa-user-plus fa-fw"></i></button>
+        <a class="btn btn-info"><i class="fa fa-info-circle fa-lg" aria-hidden="true" style = "color : white"></i></a>
+        <a href="cotisation.html"><i class="fas fa-money-bill fa-lg"></i> Cotisation</a>
+
+
+        <main class="py-4 container">
+        @yield('content')
         </main>
-    </div>
-</body>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    </body>
 </html>
+
+
+
+
